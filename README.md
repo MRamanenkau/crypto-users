@@ -15,28 +15,32 @@ This repository contains a REST API server built with NestJS and TypeScript, des
    git clone git@github.com:MRamanenkau/crypto-users.git
    cd crypto-users
    ```
-2. Install Dependencies
+2. Install Nest.js CLI globally
+   ```
+   npm install -g @nestjs/cli
+   ```
+3. Install Dependencies
    ```
    npm install
    ```
-3. Configure Environment Variables
+4. Configure Environment Variables
    ```
    cp .env.example .env
    ```
-4. Set Up PostgreSQL
+5. Set Up PostgreSQL
     ```
     docker compose up postgres 
     ```
-5. Start the Development Server
+6. Start the Development Server
    ```
    npm run start:dev
    ```
     * The API will be available at http://localhost:3000.
-6. Optional: run both the Development Server and the Database with Docker Compose
+7. Optional: run both the Development Server and the Database with Docker Compose
    ```
    docker compose up
    ```
-7. Run Integration Tests
+8. Run Integration Tests
    ```
    npm run test
    ```
