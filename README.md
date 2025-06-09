@@ -1,99 +1,83 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Crypto Users REST API
+This repository contains a REST API server built with NestJS and TypeScript, designed to manage user data with a PostgreSQL database. The API currently supports creating users with unique email addresses and querying all users, with plans to expand to approximately 20 endpoints and 10 database tables for production.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Getting Started
+### Prerequisites
+* Node.js: v20 or higher
+* npm: v10 or higher
+* Docker v28 or higher
+* Note: Lower versions of Node.js, npm, and Docker may work, but there is no guarantee of compatibility.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Setup Development Environment
+1. Clone the Repository
+   ```
+   git clone git@github.com:MRamanenkau/crypto-users.git
+   cd crypto-users
+   ```
+2. Install Dependencies
+   ```
+   npm install
+   ```
+3. Configure Environment Variables
+   ```
+   cp .env.example .env
+   ```
+4. Set Up PostgreSQL
+    ```
+    docker compose up postgres 
+    ```
+5. Start the Development Server
+   ```
+   npm run start:dev
+   ```
+    * The API will be available at http://localhost:3000.
+6. Run Integration Tests
+   ```
+   npm run test
+   ```
+   * Tests cover the user creation and retrieval endpoints, ensuring unique email constraints.
 
-## Description
+## Development Roadmap
+The table below outlines the prioritized tasks to achieve a production-grade REST API. These tasks address security, performance, maintainability, scalability, and development experience to support sustainable development and maintenance.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ npm install
-```
-
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+| Item                                                                                 | Rationale                                                                                                                                                                                                                                                |
+|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Enforce 2FA, limit write access to developers, and use branch protection for main    | Enforce two-factor (2FA) and restrict write access developers to prevent unauthorized changes. Branch protection ensures code reviews and CI checks pass before merging, enhancing security and code quality.                                            |
+| Enable GHAS for CodeQL, secret scanning, and Dependabot. Set up GitGuardian and Snyk | GitHub Advanced Security (GHAS) with CodeQL scans for vulnerabilities like SQL injection and XSS. Secret scanning and GitGuardian detect exposed credentials in code. Dependabot and Snyk manage dependency vulnerabilities, ensuring a secure codebase. |
+| Set up signed commits and artifacts                                                  | Require signed commits to verify authorship and integrity. Signed artifacts ensure deployed binaries are untampered, critical for secure CI/CD pipelines and auditability.                                                                               |
+| Configure tslint, prettier, gitlint with company style guidelines                    | Standardize code formatting with tslint, prettier, and gitlint to align with company style, improving readability and speeding up code reviews by reducing stylistic debates.                                                                            |
+| Configure pre-commit hooks for style and credential checks                           | Pre-commit hooks enforce style guidelines and scan for credentials before commits, reducing errors and security risks early in the development process.                                                                                                  |
+| Establish code review policy and PR templates                                        | Define a code review policy requiring at least one senior developer approval. PR templates ensure reviews check for security, best practices, and optimization, improving development experience and code quality.                                       |
+| Document (or use existing) branching strategy                                        | Working with branches and releases must be clear to speed up review process and avoid deployment mistakes.                                                                                                                                               |
+| Set up development and testing environments                                          | Simplify development and testing processes.                                                                                                                                                                                                              |
+| Add test coverage reporting                                                          | Integrate tools like Istanbul to generate test coverage reports, helping developers identify untested code paths and improve stability.                                                                                                                  |
+| Set up API versioning                                                                | Allow evolve API safely.                                                                                                                                                                                                                                 |
+| Enable HTTP Strict Transport Security (HSTS)                                         | Improve usability by forcing browsers to use HTTPS.                                                                                                                                                                                                      |
+| Add input validation and sanitization                                                | Use class-validator to validate and sanitize inputs, preventing injection attacks and malformed data, enhancing security.                                                                                                                                |
+| Limit Payload Size                                                                   | Prevent denial-of-service (DoS) attacks by limiting request body size.                                                                                                                                                                                   |
+| Prevent Cross-Site Request Forgery (CSRF)                                            | Improve security of sensitive actions.                                                                                                                                                                                                                   |
+| Configure CORS                                                                       | Improve security by restricting cross-origin requests to trusted domains.                                                                                                                                                                                |
+| Implement Role-Based Access Control (RBAC)                                           | Improve security by protecting sensetive endpoints.                                                                                                                                                                                                      |
+| Add logging                                                                          | Implement Winston for structured logging to capture API events, errors, and security incidents, aiding debugging and monitoring.                                                                                                                         |
+| Set up production-grade containerized deployment                                     | Use Docker for reproducible, scalable deployments in a public cloud, ensuring security and consistency across environments.                                                                                                                              |
+| Deploy database according to besect security practices                               | Store production users data.                                                                                                                                                                                                                             |
+| CI/CD with pinned dependencies and encrypted secrets                                 | Configure CI/CD with GitHub Actions, using pinned dependencies to avoid supply chain attacks and encrypted secrets for secure configuration.                                                                                                             |
+| Configure LB to terminate SSL                                                        | Secure users data in transit.                                                                                                                                                                                                                            |
+| Add API documentation                                                                | Use Swagger/OpenAPI to generate interactive API documentation, improving developer experience for consumers and easing integration.                                                                                                                      |
+| Set up solution for DB migrations                                                    | Use TypeORM migrations to manage database schema changes, ensuring consistency and stability across environments.                                                                                                                                        |
+| Configure monitoring, request tracing, and alerting                                  | Implement Loki, Grafana, Jaeger, and Prometheus for monitoring and tracing, with PagerDuty for alerting, to ensure real-time visibility into performance and issues.                                                                                     |
+| Set up on-call duty policy                                                           | Establish an on-call rotation to ensure rapid response to production incidents, improving reliability and customer trust.                                                                                                                                |
+| Add API authorization                                                                | Implement authentication to secure endpoints, protecting sensitive user data like email addresses.                                                                                                                                                       |
+| Implement rate limiting                                                              | Use rate limiting to prevent API abuse, ensuring performance and availability under high load or malicious activity.                                                                                                                                     |
+| Optimize database connection pooling                                                 | Configure TypeORM connection pooling to manage database connections efficiently, improving performance under high concurrency.                                                                                                                           |
+| Implement caching for frequently accessed data                                       | Use Redis for caching frequently accessed data, reducing database load and improving response times.                                                                                                                                                     |
+| Implement database indexing                                                          | Add indexes on frequently queried fields like email to optimize query performance and scalability.                                                                                                                                                       |
+| Implement pagination for user queries                                                | Add pagination to the user retrieval endpoint to reduce load and improve performance for large datasets.                                                                                                                                                 |
+| Performance test                                                                     | Conduct load and stress tests with tools like Artillery to identify bottlenecks and ensure the API handles production traffic.                                                                                                                           |
+| Implement scaling techniques                                                         | Use partitioning, replication, sharding, load balancing, and Kubernetes to scale the API and database for high availability and performance.                                                                                                             |
+| Implement automated DB backup                                                        | Set up automated PostgreSQL backups with tools like pg_dump or AWS RDS snapshots to ensure data recovery in case of failures.                                                                                                                            |
+| Document incident recovery plan                                                      | Create procedures for identifying, containing, and mitigating breaches, including revoking compromised tokens, rolling back malicious commits, and notifying stakeholders to ensure rapid recovery and compliance.                                       |
+| Simulate incident and test recovery plan                                             | Verify if recovery mechanism works as expected.                                                                                                                                                                                                          |
+| Usability test                                                                       | Conduct usability testing with API consumers to ensure endpoints are intuitive and meet customer needs, improving adoption and satisfaction.                                                                                                             |
+| Internal security audit for common attacks                                           | Use tools like OWASP ZAP, Burp Suite, or cloud-native scanners (e.g., AWS Inspector) to identify vulnerabilities.                                                                                                                                        |
+| External security audit                                                              | Engage third-party auditors to validate security measures, identifying blind spots and ensuring compliance with industry standards.                                                                                                                      |
