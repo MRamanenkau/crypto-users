@@ -6,6 +6,7 @@ This repository contains a REST API server built with NestJS and TypeScript, des
 * Node.js: v20 or higher
 * npm: v10 or higher
 * Docker v28 or higher
+* Docker Compose v2.33.1 or higher
 * Note: Lower versions of Node.js, npm, and Docker may work, but there is no guarantee of compatibility.
 
 ### Setup Development Environment
@@ -31,7 +32,11 @@ This repository contains a REST API server built with NestJS and TypeScript, des
    npm run start:dev
    ```
     * The API will be available at http://localhost:3000.
-6. Run Integration Tests
+6. Optional: run both the Development Server and the Database with Docker Compose
+   ```
+   docker compose up
+   ```
+7. Run Integration Tests
    ```
    npm run test
    ```
